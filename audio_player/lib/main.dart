@@ -16,6 +16,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
           // This is the theme of your application.
@@ -58,7 +59,7 @@ class _MainScreenState extends State<MainScreen> {
     audioPlayer.setAsset('assets/neffex.mp3').then((value) {
       duration = value;
       audioPlayer.play();
-      timer = Timer.periodic(Duration(milliseconds: 200), (timer) {
+      timer = Timer.periodic(const Duration(milliseconds: 200), (timer) {
         setState(() {});
       });
       setState(() {});
